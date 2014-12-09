@@ -43,7 +43,7 @@ class Homestead
 		# Register All Of The Configured Shared Folders
 		if settings.has_key?("folders") && settings["folders"].kind_of?(Array)
 			settings["folders"].each do |folder|
-				config.vm.synced_folder folder["map"], folder["to"], type: folder["type"] ||= nil, group: folder["group"] ||= "apache", owner: folder["owner"] ||= "apache"
+				config.vm.synced_folder folder["map"], folder["to"], type: folder["type"] ||= nil, group: folder["group"] ||= "vagrant", owner: folder["owner"] ||= "vagrant"
 			end
 		end
 	    
