@@ -11,8 +11,6 @@ block="<VirtualHost *:80>
 	</Directory>
 </VirtualHost>"
 
-mkdir -p $2
-chown apache:apache $2
 echo "$block" > "/etc/httpd/conf/vhosts/$1.conf"
 service httpd restart
 service hhvm restart
