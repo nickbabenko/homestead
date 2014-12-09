@@ -6,8 +6,10 @@ block="<VirtualHost *:80>
 	ErrorLog /var/log/httpd/$1-error.log
 	CustomLog /var/log/httpd/$1-access.log combined
 	<Directory "$2">
-		AllowOverride All
-		Options Indexes Includes FollowSymLinks
+                Order Deny,Allow
+                AllowOverride All
+                Allow from all
+                Options Indexes Includes FollowSymLinks
 	</Directory>
 </VirtualHost>"
 
